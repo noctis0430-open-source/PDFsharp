@@ -120,7 +120,7 @@ namespace PdfSharp
         /// <summary>
         /// The patch number of the product.
         /// </summary>
-        public const string VersionPatch = "0";
+        public const string VersionPatch = "1";
 
         /// <summary>
         /// The Version Prerelease String for NuGet.
