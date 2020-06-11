@@ -169,6 +169,18 @@ namespace PdfSharp.Pdf
                 if (disposing)
                 {
                     // Dispose managed resources.
+
+                    // ref: https://forum.pdfsharp.net/viewtopic.php?f=2&t=2177
+
+                    _info = null;
+                    _pages = null;
+                    _fontTable = null;
+                    _catalog = null;
+                    _trailer = null;
+                    _irefTable = null;
+
+                    GC.Collect();
+                    GC.WaitForPendingFinalizers();
                 }
                 //PdfDocument.Gob.DetatchDocument(Handle);
             }
