@@ -173,12 +173,34 @@ namespace PdfSharp.Pdf
 
                     // ref: https://forum.pdfsharp.net/viewtopic.php?f=2&t=2177
 
-                    _info = null;
-                    _pages = null;
-                    _fontTable = null;
                     _catalog = null;
-                    _trailer = null;
+                    _customValues = null;
+
+                    _document?.Dispose();
+                    _document = null;
+
+                    _extGStateTable = null;
+                    _fontTable = null;
+                    _formTable = null;
+                    _handle = null;
+                    _imageTable = null;
+                    _info = null;
+                    _internals = null;
                     _irefTable = null;
+                    _lexer = null;
+                    _options = null;
+
+                    _outStream?.Dispose();
+                    _outStream = null;
+
+                    _pages = null;
+                    _securitySettings = null;
+                    _settings = null;
+
+                    (_tag as IDisposable)?.Dispose();
+                    _tag = null;
+
+                    _trailer = null;
 
                     GC.Collect();
                     GC.WaitForPendingFinalizers();

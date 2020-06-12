@@ -167,7 +167,10 @@ namespace PdfSharp.Drawing
                         //...
                     }
                     if (_externalDocument != null)
+                    {
                         PdfDocument.Tls.DetachDocument(_externalDocument.Handle);
+                        _externalDocument.Dispose();
+                    }
                     //...
                 }
                 finally
